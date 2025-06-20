@@ -270,6 +270,9 @@ fn build_rocksdb() {
 
     config.cpp(true);
     config.flag_if_supported("-std=c++17");
+    config.flag_if_supported("-mavx");
+    config.flag_if_supported("-march=corei7-avx");
+    config.flag_if_supported("-mtune=corei7-avx");
     config.compile("librocksdb.a");
 }
 
